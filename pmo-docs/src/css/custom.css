@@ -61,6 +61,12 @@
   --ifm-color-primary-lightest: #e0f2fe;
   --docusaurus-highlighted-code-line-bg: rgba(56, 189, 248, 0.3);
   
+  /* Dark theme background colors */
+  --ifm-background-color: #0f172a;
+  --ifm-background-surface-color: #1e293b;
+  --ifm-color-content: #e2e8f0;
+  --ifm-color-content-secondary: #cbd5e1;
+  
   /* Set Vazirmatn as the default font family */
   --ifm-font-family-base: 'Vazirmatn', 'Segoe UI', Tahoma, Arial, sans-serif;
 }
@@ -68,6 +74,22 @@
 /* Apply Vazirmatn font globally */
 * {
   font-family: 'Vazirmatn', 'Segoe UI', Tahoma, Arial, sans-serif !important;
+}
+
+/* Dark theme global styling */
+[data-theme='dark'] html,
+[data-theme='dark'] body,
+[data-theme='dark'] #__docusaurus {
+  background-color: #0f172a !important;
+  color: #e2e8f0 !important;
+}
+
+[data-theme='dark'] .main-wrapper {
+  background-color: #0f172a !important;
+}
+
+[data-theme='dark'] .container {
+  background-color: transparent !important;
 }
 
 /* RTL Support for Persian */
@@ -128,6 +150,29 @@ html[dir='rtl'] .pagination-nav__link--next .pagination-nav__label::after {
   box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
   backdrop-filter: blur(10px);
   border-bottom: 1px solid var(--border-light);
+}
+
+/* Dark Theme Navbar */
+[data-theme='dark'] .navbar {
+  background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+  border-bottom: 1px solid #334155;
+}
+
+[data-theme='dark'] .navbar__title {
+  color: #e2e8f0 !important;
+}
+
+[data-theme='dark'] .navbar__link {
+  color: #cbd5e1 !important;
+}
+
+[data-theme='dark'] .navbar__link:hover {
+  color: #38bdf8 !important;
+}
+
+[data-theme='dark'] .navbar__item--right .navbar__link {
+  color: #38bdf8 !important;
 }
 
 .navbar__title {
@@ -223,6 +268,48 @@ body {
   font-weight: 500;
 }
 
+/* Dark theme search highlight */
+[data-theme='dark'] .search-highlight {
+  background: linear-gradient(135deg, #1e40af, #1d4ed8);
+  color: #bfdbfe;
+}
+
+/* Dark theme for portal cards */
+[data-theme='dark'] .modern-service-card {
+  background: linear-gradient(135deg, #1e293b 0%, #334155 100%);
+  border: 1px solid #475569;
+  color: #e2e8f0;
+}
+
+[data-theme='dark'] .modern-service-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 32px rgba(56, 189, 248, 0.2);
+  border-color: #38bdf8;
+}
+
+/* Dark theme for hero section */
+[data-theme='dark'] .hero {
+  background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%) !important;
+  color: #e2e8f0 !important;
+}
+
+[data-theme='dark'] .hero__title {
+  color: #f1f5f9 !important;
+}
+
+[data-theme='dark'] .hero__subtitle {
+  color: #cbd5e1 !important;
+}
+
+[data-theme='dark'] .modern-btn {
+  background: linear-gradient(135deg, #0ea5e9, #0284c7);
+  color: white;
+}
+
+[data-theme='dark'] .modern-btn:hover {
+  box-shadow: 0 4px 8px rgba(56, 189, 248, 0.4);
+}
+
 /* Status indicators */
 .status-active {
   background: #dcfce7;
@@ -248,20 +335,25 @@ body {
 .footer {
   background: linear-gradient(135deg, var(--slate-gray) 0%, #475569 100%);
   border-top: 1px solid var(--border-light);
+  text-align: center;
+  padding: 1.5rem 0;
 }
 
-.footer__title {
-  color: var(--sky-blue);
-  font-weight: 600;
+.footer__copyright {
+  color: rgba(255, 255, 255, 0.9);
+  font-family: 'Vazirmatn', sans-serif !important;
+  font-size: 0.9rem;
+  margin: 0;
 }
 
-.footer__link-item {
-  color: rgba(255, 255, 255, 0.8);
-  transition: color 0.3s ease;
+/* Dark theme footer */
+[data-theme='dark'] .footer {
+  background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+  border-top: 1px solid #334155;
 }
 
-.footer__link-item:hover {
-  color: white;
+[data-theme='dark'] .footer__copyright {
+  color: #cbd5e1;
 }
 
 /* Loading animations */

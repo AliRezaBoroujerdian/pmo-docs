@@ -79,6 +79,8 @@ const config: Config = {
     // Replace with your project's social card
     image: 'img/docusaurus-social-card.jpg',
     colorMode: {
+      defaultMode: 'light',
+      disableSwitch: false,
       respectPrefersColorScheme: true,
     },
     navbar: {
@@ -100,57 +102,11 @@ const config: Config = {
           label: 'مستندات',
         },
         {to: '/blog', label: 'اخبار و اطلاعیه‌ها', position: 'left'},
-        {
-          href: 'https://github.com/AliRezaBoroujerdian/pmo-docs',
-          label: 'GitHub',
-          position: 'right',
-        },
       ],
     },
     footer: {
       style: 'dark',
-      links: [
-        {
-          title: 'Docs',
-          items: [
-            {
-              label: 'Tutorial',
-              to: '/docs/intro',
-            },
-          ],
-        },
-        {
-          title: 'Community',
-          items: [
-            {
-              label: 'Stack Overflow',
-              href: 'https://stackoverflow.com/questions/tagged/docusaurus',
-            },
-            {
-              label: 'Discord',
-              href: 'https://discordapp.com/invite/docusaurus',
-            },
-            {
-              label: 'X',
-              href: 'https://x.com/docusaurus',
-            },
-          ],
-        },
-        {
-          title: 'More',
-          items: [
-            {
-              label: 'Blog',
-              to: '/blog',
-            },
-            {
-              label: 'GitHub',
-              href: 'https://github.com/facebook/docusaurus',
-            },
-          ],
-        },
-      ],
-      copyright: `کلیه حقوق برای سازمان بنادر و دریانوردی جمهوری اسلامی ایران محفوظ است © ${new Date().getFullYear()}`,
+      copyright: `سازمان بنادر و دریانوردی • v1.0.0`,
     },
     prism: {
       theme: prismThemes.github,
