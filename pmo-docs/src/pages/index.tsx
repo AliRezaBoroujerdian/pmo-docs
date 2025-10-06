@@ -21,7 +21,7 @@ function HomepageHeader() {
           <Link
             className="button button--secondary button--lg"
             to="/docs/intro">
-            شروع کار با PMO - ۵ دقیقه ⏱️
+            مشاهده مستندات سازمانی 📋
           </Link>
         </div>
       </div>
@@ -33,8 +33,8 @@ export default function Home(): ReactNode {
   const {siteConfig} = useDocusaurusContext();
   return (
     <Layout
-      title={`خانه ${siteConfig.title}`}
-      description="سیستم مدیریت پروژه‌های سازمانی - PMO">
+      title={`سامانه مستندات ${siteConfig.title}`}
+      description="سامانه مدیریت اسناد و فرآیندهای سازمان بنادر و دریانوردی جمهوری اسلامی ایران">
       <HomepageHeader />
       <main>
         <HomepageFeatures />

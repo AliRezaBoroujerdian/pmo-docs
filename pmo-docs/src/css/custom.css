@@ -6,27 +6,57 @@
 
 /* You can override the default Infima variables here. */
 :root {
-  --ifm-color-primary: #2e8555;
-  --ifm-color-primary-dark: #29784c;
-  --ifm-color-primary-darker: #277148;
-  --ifm-color-primary-darkest: #205d3b;
-  --ifm-color-primary-light: #33925d;
-  --ifm-color-primary-lighter: #359962;
-  --ifm-color-primary-lightest: #3cad6e;
+  /* Maritime and Ports Organization Color Palette */
+  --ifm-color-primary: #1a365d;
+  --ifm-color-primary-dark: #153052;
+  --ifm-color-primary-darker: #132d4d;
+  --ifm-color-primary-darkest: #0f253f;
+  --ifm-color-primary-light: #1f3c68;
+  --ifm-color-primary-lighter: #213f6d;
+  --ifm-color-primary-lightest: #254578;
+  
+  /* Secondary colors for accents */
+  --ifm-color-secondary: #2c5282;
+  --ifm-color-secondary-dark: #2a4e7c;
+  --ifm-color-secondary-darker: #284a75;
+  --ifm-color-secondary-darkest: #233d61;
+  --ifm-color-secondary-light: #2e5688;
+  --ifm-color-secondary-lighter: #305a8f;
+  --ifm-color-secondary-lightest: #3461a2;
+  
+  /* Professional grays */
+  --ifm-color-gray-0: #ffffff;
+  --ifm-color-gray-100: #f7fafc;
+  --ifm-color-gray-200: #edf2f7;
+  --ifm-color-gray-300: #e2e8f0;
+  --ifm-color-gray-400: #cbd5e0;
+  --ifm-color-gray-500: #a0aec0;
+  --ifm-color-gray-600: #718096;
+  --ifm-color-gray-700: #4a5568;
+  --ifm-color-gray-800: #2d3748;
+  --ifm-color-gray-900: #1a202c;
+  
   --ifm-code-font-size: 95%;
-  --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.1);
+  --docusaurus-highlighted-code-line-bg: rgba(26, 54, 93, 0.1);
+  
+  /* Custom variables for maritime theme */
+  --maritime-blue: #1a365d;
+  --ocean-blue: #2c5282;
+  --navy-blue: #2d3748;
+  --wave-blue: #4299e1;
+  --anchor-gray: #718096;
 }
 
 /* For readability concerns, you should choose a lighter palette in dark mode. */
 [data-theme='dark'] {
-  --ifm-color-primary: #25c2a0;
-  --ifm-color-primary-dark: #21af90;
-  --ifm-color-primary-darker: #1fa588;
-  --ifm-color-primary-darkest: #1a8870;
-  --ifm-color-primary-light: #29d5b0;
-  --ifm-color-primary-lighter: #32d8b4;
-  --ifm-color-primary-lightest: #4fddbf;
-  --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
+  --ifm-color-primary: #4299e1;
+  --ifm-color-primary-dark: #3182ce;
+  --ifm-color-primary-darker: #2b77cb;
+  --ifm-color-primary-darkest: #1e63a7;
+  --ifm-color-primary-light: #63b3ed;
+  --ifm-color-primary-lighter: #76c7f0;
+  --ifm-color-primary-lightest: #9ae6f7;
+  --docusaurus-highlighted-code-line-bg: rgba(66, 153, 225, 0.3);
 }
 
 /* RTL Support for Persian */
@@ -80,6 +110,143 @@ html[dir='rtl'] .pagination-nav__link--next .pagination-nav__label::after {
 
 /* Persian font loading */
 @import url('https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;600;700&display=swap');
+
+/* Professional Maritime Theme Enhancements */
+.navbar {
+  background: linear-gradient(135deg, var(--maritime-blue) 0%, var(--ocean-blue) 100%);
+  box-shadow: 0 2px 4px rgba(26, 54, 93, 0.1);
+}
+
+.navbar__title {
+  font-weight: 600;
+  color: white !important;
+}
+
+.navbar__link {
+  font-weight: 500;
+}
+
+/* Hero section styling */
+.hero {
+  background: linear-gradient(135deg, var(--maritime-blue) 0%, var(--ocean-blue) 50%, var(--wave-blue) 100%);
+  position: relative;
+  overflow: hidden;
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='60' height='60' viewBox='0 0 60 60'%3E%3Cg fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E") repeat;
+  opacity: 0.3;
+}
+
+.hero__title {
+  font-size: 3.5rem;
+  font-weight: 700;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+  margin-bottom: 1rem;
+}
+
+.hero__subtitle {
+  font-size: 1.5rem;
+  font-weight: 400;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+  margin-bottom: 2rem;
+}
+
+/* Card and feature styling */
+.card {
+  border: none;
+  box-shadow: 0 4px 6px rgba(26, 54, 93, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 15px rgba(26, 54, 93, 0.15);
+}
+
+/* Button styling */
+.button--secondary {
+  background: white;
+  color: var(--maritime-blue);
+  border: 2px solid white;
+  font-weight: 600;
+  padding: 0.8rem 2rem;
+  font-size: 1.1rem;
+  transition: all 0.3s ease;
+}
+
+.button--secondary:hover {
+  background: transparent;
+  color: white;
+  border-color: white;
+  transform: translateY(-1px);
+}
+
+/* Footer styling */
+.footer {
+  background: linear-gradient(135deg, var(--navy-blue) 0%, var(--maritime-blue) 100%);
+}
+
+.footer__title {
+  color: var(--wave-blue);
+  font-weight: 600;
+}
+
+/* Professional table styling */
+.table-responsive table {
+  border-collapse: separate;
+  border-spacing: 0;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 4px rgba(26, 54, 93, 0.1);
+}
+
+.table-responsive th {
+  background: var(--maritime-blue);
+  color: white;
+  font-weight: 600;
+  padding: 1rem;
+}
+
+.table-responsive td {
+  padding: 1rem;
+  border-bottom: 1px solid var(--ifm-color-gray-200);
+}
+
+/* Modern sidebar styling */
+.menu__link {
+  border-radius: 6px;
+  transition: all 0.2s ease;
+}
+
+.menu__link:hover,
+.menu__link--active {
+  background: linear-gradient(135deg, var(--maritime-blue), var(--ocean-blue));
+  color: white;
+}
+
+/* Code block enhancements */
+.prism-code {
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(26, 54, 93, 0.1);
+}
+
+/* Responsive improvements */
+@media (max-width: 768px) {
+  .hero__title {
+    font-size: 2.5rem;
+  }
+  
+  .hero__subtitle {
+    font-size: 1.2rem;
+  }
+}
 
 /* Code blocks and inline code RTL handling */
 html[dir='rtl'] code {

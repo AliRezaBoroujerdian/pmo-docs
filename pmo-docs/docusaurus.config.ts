@@ -5,8 +5,8 @@ import type * as Preset from '@docusaurus/preset-classic';
 // This runs in Node.js - Don't use client-side code here (browser APIs, JSX...)
 
 const config: Config = {
-  title: 'مستندات PMO',
-  tagline: 'مدیریت پروژه های سازمانی',
+  title: 'سازمان بنادر و دریانوردی',
+  tagline: 'سیستم مدیریت اسناد و فرآیندهای سازمانی',
   favicon: 'img/favicon.ico',
 
   // Future flags, see https://docusaurus.io/docs/api/docusaurus-config#future
@@ -82,10 +82,10 @@ const config: Config = {
       respectPrefersColorScheme: true,
     },
     navbar: {
-      title: 'مستندات PMO',
+      title: 'سازمان بنادر و دریانوردی',
       logo: {
-        alt: 'PMO Logo',
-        src: 'img/logo.svg',
+        alt: 'لوگو سازمان بنادر و دریانوردی',
+        src: 'img/ports-logo.svg',
       },
       items: [
         {
@@ -94,7 +94,7 @@ const config: Config = {
           position: 'left',
           label: 'مستندات',
         },
-        {to: '/blog', label: 'بلاگ', position: 'left'},
+        {to: '/blog', label: 'اخبار و اطلاعیه‌ها', position: 'left'},
         {
           href: 'https://github.com/AliRezaBoroujerdian/pmo-docs',
           label: 'GitHub',
@@ -145,7 +145,7 @@ const config: Config = {
           ],
         },
       ],
-      copyright: `Copyright © ${new Date().getFullYear()} My Project, Inc. Built with Docusaurus.`,
+      copyright: `کلیه حقوق برای سازمان بنادر و دریانوردی جمهوری اسلامی ایران محفوظ است © ${new Date().getFullYear()}`,
     },
     prism: {
       theme: prismThemes.github,
