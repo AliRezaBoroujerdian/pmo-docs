@@ -1,0 +1,47 @@
+<svg width="40" height="40" viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg">
+  <!-- Official Maritime Logo - Anchor and Ship Wheel -->
+  <g transform="translate(20, 20)">
+    <!-- Anchor -->
+    <g fill="#334155" stroke="#334155" stroke-width="1">
+      <!-- Anchor main body -->
+      <line x1="0" y1="-15" x2="0" y2="12" stroke-width="2"/>
+      
+      <!-- Anchor top ring -->
+      <circle cx="0" cy="-15" r="3" fill="none" stroke-width="1.5"/>
+      
+      <!-- Anchor crossbar -->
+      <line x1="-6" y1="-10" x2="6" y2="-10" stroke-width="1.5"/>
+      
+      <!-- Anchor arms/flukes -->
+      <path d="M-6 12 Q-9 15 -9 18 Q-9 19 -8 19 L-6 17" fill="none" stroke-width="1.5"/>
+      <path d="M6 12 Q9 15 9 18 Q9 19 8 19 L6 17" fill="none" stroke-width="1.5"/>
+    </g>
+    
+    <!-- Ship Wheel -->
+    <g fill="none" stroke="#475569" stroke-width="1" opacity="0.7">
+      <!-- Main wheel circle -->
+      <circle cx="0" cy="-2" r="8"/>
+      <!-- Center hub -->
+      <circle cx="0" cy="-2" r="2" fill="#475569"/>
+      
+      <!-- Wheel spokes -->
+      <line x1="0" y1="-10" x2="0" y2="-6"/>
+      <line x1="0" y1="2" x2="0" y2="6"/>
+      <line x1="-8" y1="-2" x2="-4" y2="-2"/>
+      <line x1="8" y1="-2" x2="4" y2="-2"/>
+      
+      <!-- Diagonal spokes -->
+      <line x1="-5.7" y1="-7.7" x2="-2.8" y2="-4.8"/>
+      <line x1="5.7" y1="-7.7" x2="2.8" y2="-4.8"/>
+      <line x1="-5.7" y1="3.7" x2="-2.8" y2="0.8"/>
+      <line x1="5.7" y1="3.7" x2="2.8" y2="0.8"/>
+    </g>
+    
+    <!-- Chain elements -->
+    <g fill="none" stroke="#64748b" stroke-width="0.8" opacity="0.6">
+      <ellipse cx="-2" cy="6" rx="1.5" ry="2.5"/>
+      <ellipse cx="2" cy="8" rx="1.5" ry="2.5"/>
+      <ellipse cx="-2" cy="10" rx="1.5" ry="2.5"/>
+    </g>
+  </g>
+</svg>

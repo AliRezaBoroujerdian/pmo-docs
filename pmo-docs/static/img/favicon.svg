@@ -1,0 +1,41 @@
+<svg width="32" height="32" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
+  <!-- Maritime Organization Favicon - Simplified Anchor and Wheel -->
+  <defs>
+    <style>
+      .anchor-fill { fill: #1a365d; }
+      .wheel-stroke { stroke: #1a365d; stroke-width: 1.5; fill: none; }
+      .anchor-stroke { stroke: #1a365d; stroke-width: 2; }
+    </style>
+  </defs>
+  
+  <!-- Background -->
+  <circle cx="16" cy="16" r="15" fill="#ffffff" stroke="#1a365d" stroke-width="2"/>
+  
+  <!-- Simplified Anchor -->
+  <g class="anchor-fill">
+    <!-- Anchor body -->
+    <rect x="15" y="8" width="2" height="16" rx="1"/>
+    
+    <!-- Anchor top ring -->
+    <circle cx="16" cy="8" r="3" fill="none" class="anchor-stroke"/>
+    
+    <!-- Anchor crossbar -->
+    <rect x="12" y="11" width="8" height="1.5" rx="0.75"/>
+    
+    <!-- Anchor flukes -->
+    <path d="M12 22 Q10 24 10 26 Q10 27 11 27 L13 25" fill="none" class="anchor-stroke"/>
+    <path d="M20 22 Q22 24 22 26 Q22 27 21 27 L19 25" fill="none" class="anchor-stroke"/>
+  </g>
+  
+  <!-- Ship wheel (simplified) -->
+  <circle cx="16" cy="14" r="6" fill="none" stroke="#2c5282" stroke-width="1.5" opacity="0.7"/>
+  <circle cx="16" cy="14" r="2" fill="#2c5282" opacity="0.7"/>
+  
+  <!-- Wheel spokes -->
+  <g stroke="#2c5282" stroke-width="1" opacity="0.7">
+    <line x1="16" y1="8" x2="16" y2="10"/>
+    <line x1="16" y1="18" x2="16" y2="20"/>
+    <line x1="10" y1="14" x2="12" y2="14"/>
+    <line x1="20" y1="14" x2="22" y2="14"/>
+  </g>
+</svg>

@@ -7,7 +7,7 @@ import type * as Preset from '@docusaurus/preset-classic';
 const config: Config = {
   title: 'سازمان بنادر و دریانوردی',
   tagline: 'سیستم مدیریت اسناد و فرآیندهای سازمانی',
-  favicon: 'img/favicon.ico',
+  favicon: 'img/favicon.svg',
 
   // Future flags, see https://docusaurus.io/docs/api/docusaurus-config#future
   future: {
@@ -85,7 +85,12 @@ const config: Config = {
       title: 'سازمان بنادر و دریانوردی',
       logo: {
         alt: 'لوگو سازمان بنادر و دریانوردی',
-        src: 'img/ports-logo.svg',
+        src: 'img/maritime-logo.png',
+        height: 32,
+        style: {
+          marginLeft: '8px',
+          objectFit: 'contain'
+        },
       },
       items: [
         {
