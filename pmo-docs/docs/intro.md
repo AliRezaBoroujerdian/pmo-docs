@@ -50,4 +50,4 @@ sidebar_position: 1
 
 - واحد فناوری اطلاعات سازمان
 - تلفن: ۰۲۱-۸۸۲۰۱۰۰۰
-- ایمیل: <support@pmo.ir>
+- ایمیل: [support@pmo.ir](mailto:support@pmo.ir)
