@@ -1,0 +1,10 @@
+{
+  "label": "الگوی سند معماری",
+  "position": 1,
+  "link": {
+    "type": "generated-index",
+    "title": "الگوی جامع سند معماری سازمانی",
+    "description": "راهنمای کامل تهیه اسناد معماری نرم‌افزاری بر اساس مدل 4+1 View",
+    "slug": "/architecture"
+  }
+}

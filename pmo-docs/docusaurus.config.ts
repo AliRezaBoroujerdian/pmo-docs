@@ -48,6 +48,7 @@ const config: Config = {
       {
         docs: {
           sidebarPath: './sidebars.ts',
+          routeBasePath: 'docs',
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
           editUrl:
@@ -75,6 +76,8 @@ const config: Config = {
     ],
   ],
 
+
+
   themeConfig: {
     // Replace with your project's social card
     image: 'img/docusaurus-social-card.jpg',
@@ -101,7 +104,18 @@ const config: Config = {
           position: 'left',
           label: 'مستندات',
         },
-        {to: '/blog', label: 'اخبار و اطلاعیه‌ها', position: 'left'},
+        {
+          type: 'docSidebar',
+          sidebarId: 'architectureSidebar',
+          position: 'left',
+          label: 'الگوی سند معماری',
+        },
+        {
+          type: 'docSidebar',
+          sidebarId: 'codeQualitySidebar',
+          position: 'left',
+          label: 'کنترل کیفیت کد',
+        },
       ],
     },
     footer: {
