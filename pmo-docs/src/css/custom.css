@@ -28,3 +28,81 @@
   --ifm-color-primary-lightest: #4fddbf;
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
 }
+
+/* RTL Support for Persian */
+html[dir='rtl'] {
+  font-family: 'Vazirmatn', 'Segoe UI', Tahoma, Arial, sans-serif;
+}
+
+html[dir='rtl'] .navbar__title {
+  margin-left: 0;
+  margin-right: 0.5rem;
+}
+
+html[dir='rtl'] .navbar__item {
+  margin-left: 0;
+  margin-right: 0.75rem;
+}
+
+html[dir='rtl'] .navbar__brand {
+  margin-left: 1rem;
+  margin-right: 0;
+}
+
+html[dir='rtl'] .table-of-contents {
+  padding-left: 0;
+  padding-right: 1rem;
+  border-left: none;
+  border-right: 1px solid var(--ifm-toc-border-color);
+}
+
+html[dir='rtl'] .markdown > h2 {
+  border-bottom: 1px solid var(--ifm-color-emphasis-300);
+  padding-bottom: 0.3rem;
+}
+
+html[dir='rtl'] .pagination-nav__link {
+  border: 1px solid var(--ifm-color-emphasis-300);
+  border-radius: var(--ifm-border-radius);
+}
+
+html[dir='rtl'] .pagination-nav__link--prev .pagination-nav__label::before {
+  content: '→';
+  margin-left: 0.25rem;
+  margin-right: 0;
+}
+
+html[dir='rtl'] .pagination-nav__link--next .pagination-nav__label::after {
+  content: '←';
+  margin-left: 0;
+  margin-right: 0.25rem;
+}
+
+/* Persian font loading */
+@import url('https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;600;700&display=swap');
+
+/* Code blocks and inline code RTL handling */
+html[dir='rtl'] code {
+  direction: ltr;
+  text-align: left;
+}
+
+html[dir='rtl'] pre {
+  direction: ltr;
+  text-align: left;
+}
+
+/* Sidebar adjustments for RTL */
+html[dir='rtl'] .menu__list-item-collapsible {
+  position: relative;
+}
+
+html[dir='rtl'] .menu__list-item-collapsible--active {
+  background: var(--ifm-menu-color-background-active);
+}
+
+html[dir='rtl'] .clean-btn {
+  border: none;
+  background: none;
+  cursor: pointer;
+}

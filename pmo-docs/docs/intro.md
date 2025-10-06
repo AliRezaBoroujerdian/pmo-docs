@@ -2,46 +2,44 @@
 sidebar_position: 1
 ---
 
-# Tutorial Intro
+# معرفی مستندات PMO
 
-Let's discover **Docusaurus in less than 5 minutes**.
+به **مستندات PMO خوش آمدید**.
 
-## Getting Started
+## شروع کار
 
-Get started by **creating a new site**.
+برای شروع، **یک پروژه جدید ایجاد کنید**.
 
-Or **try Docusaurus immediately** with **[docusaurus.new](https://docusaurus.new)**.
+### آنچه نیاز دارید
 
-### What you'll need
+- [Node.js](https://nodejs.org/en/download/) نسخه 20.0 یا بالاتر:
+  - هنگام نصب Node.js، توصیه می‌شود تمام چک‌باکس‌های مربوط به وابستگی‌ها را علامت‌گذاری کنید.
 
-- [Node.js](https://nodejs.org/en/download/) version 20.0 or above:
-  - When installing Node.js, you are recommended to check all checkboxes related to dependencies.
+## ایجاد سایت جدید
 
-## Generate a new site
+یک سایت جدید Docusaurus با استفاده از **الگوی کلاسیک** ایجاد کنید.
 
-Generate a new Docusaurus site using the **classic template**.
-
-The classic template will automatically be added to your project after you run the command:
+الگوی کلاسیک به طور خودکار پس از اجرای دستور به پروژه شما اضافه می‌شود:
 
 ```bash
 npm init docusaurus@latest my-website classic
 ```
 
-You can type this command into Command Prompt, Powershell, Terminal, or any other integrated terminal of your code editor.
+می‌توانید این دستور را در Command Prompt، Powershell، Terminal یا هر ترمینال یکپارچه دیگری از ویرایشگر کد خود تایپ کنید.
 
-The command also installs all necessary dependencies you need to run Docusaurus.
+این دستور همچنین تمام وابستگی‌های لازم برای اجرای Docusaurus را نصب می‌کند.
 
-## Start your site
+## راه‌اندازی سایت
 
-Run the development server:
+سرور توسعه را اجرا کنید:
 
 ```bash
 cd my-website
 npm run start
 ```
 
-The `cd` command changes the directory you're working with. In order to work with your newly created Docusaurus site, you'll need to navigate the terminal there.
+دستور `cd` دایرکتوری کاری شما را تغییر می‌دهد. برای کار با سایت Docusaurus تازه ایجاد شده، باید ترمینال را به آنجا هدایت کنید.
 
-The `npm run start` command builds your website locally and serves it through a development server, ready for you to view at http://localhost:3000/.
+دستور `npm run start` وب‌سایت شما را به صورت محلی ساخته و از طریق یک سرور توسعه ارائه می‌دهد، آماده برای مشاهده در [http://localhost:3000](http://localhost:3000).
 
-Open `docs/intro.md` (this page) and edit some lines: the site **reloads automatically** and displays your changes.
+فایل `docs/intro.md` (این صفحه) را باز کنید و چند خط را ویرایش کنید: سایت **به طور خودکار بارگذاری مجدد** می‌شود و تغییرات شما را نمایش می‌دهد.

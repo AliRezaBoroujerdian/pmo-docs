@@ -21,7 +21,7 @@ function HomepageHeader() {
           <Link
             className="button button--secondary button--lg"
             to="/docs/intro">
-            Docusaurus Tutorial - 5min ⏱️
+            شروع کار با PMO - ۵ دقیقه ⏱️
           </Link>
         </div>
       </div>
@@ -33,8 +33,8 @@ export default function Home(): ReactNode {
   const {siteConfig} = useDocusaurusContext();
   return (
     <Layout
-      title={`Hello from ${siteConfig.title}`}
-      description="Description will go into a meta tag in <head />">
+      title={`خانه ${siteConfig.title}`}
+      description="سیستم مدیریت پروژه‌های سازمانی - PMO">
       <HomepageHeader />
       <main>
         <HomepageFeatures />
