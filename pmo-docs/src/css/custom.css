@@ -331,29 +331,33 @@ body {
   font-family: 'Vazirmatn', sans-serif !important;
 }
 
-/* Footer styling */
+/* Footer styling - Adaptive to theme */
 .footer {
-  background: linear-gradient(135deg, var(--slate-gray) 0%, #475569 100%);
-  border-top: 1px solid var(--border-light);
+  background: var(--ifm-background-surface-color);
+  border-top: 1px solid var(--ifm-color-emphasis-300);
   text-align: center;
   padding: 1.5rem 0;
+  transition: all 0.3s ease;
 }
 
 .footer__copyright {
-  color: rgba(255, 255, 255, 0.9);
+  color: var(--ifm-color-content-secondary);
   font-family: 'Vazirmatn', sans-serif !important;
   font-size: 0.9rem;
   margin: 0;
+  opacity: 0.9;
 }
 
-/* Dark theme footer */
+/* Light theme footer adjustments */
+[data-theme='light'] .footer {
+  background: var(--ifm-color-gray-100);
+  border-top: 1px solid var(--ifm-color-gray-300);
+}
+
+/* Dark theme footer adjustments */
 [data-theme='dark'] .footer {
-  background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
-  border-top: 1px solid #334155;
-}
-
-[data-theme='dark'] .footer__copyright {
-  color: #cbd5e1;
+  background: var(--ifm-background-surface-color);
+  border-top: 1px solid var(--ifm-color-emphasis-300);
 }
 
 /* Loading animations */

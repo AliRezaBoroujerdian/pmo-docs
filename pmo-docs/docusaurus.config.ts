@@ -105,7 +105,6 @@ const config: Config = {
       ],
     },
     footer: {
-      style: 'dark',
       copyright: `سازمان بنادر و دریانوردی • v1.0.0`,
     },
     prism: {
