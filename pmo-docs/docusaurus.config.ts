@@ -18,7 +18,7 @@ const config: Config = {
   url: 'https://alirezaboroujerdian.github.io',
   // Set the /<baseUrl>/ pathname under which your site is served
   // For GitHub pages deployment, it is often '/<projectName>/'
-  baseUrl: '/pmo-docs/',
+  baseUrl: '/',
 
   // GitHub pages deployment config.
   // If you aren't using GitHub pages, you don't need these.
@@ -97,26 +97,7 @@ const config: Config = {
           objectFit: 'contain'
         },
       },
-      items: [
-        {
-          type: 'docSidebar',
-          sidebarId: 'tutorialSidebar',
-          position: 'left',
-          label: 'مستندات',
-        },
-        {
-          type: 'docSidebar',
-          sidebarId: 'architectureSidebar',
-          position: 'left',
-          label: 'الگوی سند معماری',
-        },
-        {
-          type: 'docSidebar',
-          sidebarId: 'codeQualitySidebar',
-          position: 'left',
-          label: 'کنترل کیفیت کد',
-        },
-      ],
+      items: [],
     },
     footer: {
       copyright: `سازمان بنادر و دریانوردی • v1.0.0`,
