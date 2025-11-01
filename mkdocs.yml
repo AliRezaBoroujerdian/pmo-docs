@@ -81,3 +81,4 @@ extra_css:
 # Extra JavaScript
 extra_javascript:
   - javascripts/version-selector.js
+  - javascripts/export-buttons.js
