@@ -72,3 +72,8 @@ nav:
 # Extra CSS for better RTL support
 extra_css:
   - stylesheets/extra.css
+  - stylesheets/version-selector.css
+
+# Extra JavaScript
+extra_javascript:
+  - javascripts/version-selector.js
