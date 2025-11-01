@@ -62,7 +62,12 @@ nav:
       - انتخاب نسخه: risk-management/index.md
       - نسخه 1.0: risk-management/versions/v1.0/overview.md
       - نسخه 2.0: risk-management/versions/v2.0/overview.md
-      - نسخه 3.0: risk-management/versions/v3.0/overview.md
+      - نسخه 3.0:
+          - مرور کلی: risk-management/versions/v3.0/overview.md
+          - شناسایی: risk-management/versions/v3.0/identification.md
+          - ارزیابی: risk-management/versions/v3.0/assessment.md
+          - پاسخ: risk-management/versions/v3.0/response.md
+          - پایش: risk-management/versions/v3.0/monitoring.md
 
 # Extra CSS for better RTL support
 extra_css:
