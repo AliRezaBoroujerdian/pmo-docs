@@ -1,0 +1,63 @@
+site_name: مستندات PMO
+site_description: سیستم مستندسازی مدیریت پروژه
+site_author: تیم PMO
+
+# Repository
+repo_name: pmo-docs
+repo_url: https://github.com/yourorg/pmo-docs
+
+# Theme configuration
+theme:
+  name: material
+  language: fa
+  direction: rtl
+  features:
+    - navigation.instant
+    - navigation.tracking
+    - navigation.tabs
+    - navigation.sections
+    - navigation.expand
+    - navigation.top
+    - search.suggest
+    - search.highlight
+    - content.code.copy
+  palette:
+    - scheme: default
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/brightness-7
+        name: تغییر به حالت تاریک
+    - scheme: slate
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/brightness-4
+        name: تغییر به حالت روشن
+  font:
+    text: Roboto
+    code: Roboto Mono
+
+# Plugins
+plugins:
+  - search:
+      lang: fa
+
+# Extensions
+markdown_extensions:
+  - admonition
+  - pymdownx.details
+  - pymdownx.superfences
+  - pymdownx.tabbed:
+      alternate_style: true
+  - tables
+  - attr_list
+  - md_in_html
+
+# Navigation
+nav:
+  - صفحه اصلی: index.md
+
+# Extra CSS for better RTL support
+extra_css:
+  - stylesheets/extra.css

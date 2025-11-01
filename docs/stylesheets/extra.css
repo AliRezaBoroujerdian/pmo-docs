@@ -1,0 +1,38 @@
+/* RTL Support for Material MkDocs */
+[dir="rtl"] .md-content {
+  text-align: right;
+}
+
+[dir="rtl"] .md-nav__link {
+  text-align: right;
+}
+
+[dir="rtl"] .md-typeset {
+  direction: rtl;
+}
+
+[dir="rtl"] .md-typeset ul,
+[dir="rtl"] .md-typeset ol {
+  padding-right: 2em;
+  padding-left: 0;
+}
+
+[dir="rtl"] .md-typeset blockquote {
+  border-right: 0.2rem solid var(--md-default-fg-color--lighter);
+  border-left: none;
+  padding-right: 0.6rem;
+  padding-left: 0;
+}
+
+/* Better font support for Persian */
+.md-typeset {
+  font-family: 'Roboto', 'Tahoma', 'Arial', sans-serif;
+  line-height: 1.8;
+}
+
+/* Code blocks RTL fix */
+[dir="rtl"] .md-typeset pre,
+[dir="rtl"] .md-typeset code {
+  direction: ltr;
+  text-align: left;
+}
