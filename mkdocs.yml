@@ -62,3 +62,9 @@ nav:
 # Extra CSS for better RTL support
 extra_css:
   - stylesheets/extra.css
+
+# Version selector
+extra:
+  version:
+    provider: mike
+    default: latest
