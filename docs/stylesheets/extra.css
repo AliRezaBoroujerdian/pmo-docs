@@ -49,7 +49,11 @@
   padding-left: 0;
 }
 
-/* Better font support for Persian */
+/* Better font support for Persian - Apply Vazirmatn to all elements */
+* {
+  font-family: 'Vazirmatn', 'Tahoma', 'Arial', sans-serif !important;
+}
+
 .md-typeset {
   font-family: 'Vazirmatn', 'Tahoma', 'Arial', sans-serif;
   line-height: 1.8;
@@ -65,9 +69,34 @@
   font-weight: 700;
 }
 
+/* Navigation and Menu */
 .md-nav,
+.md-nav__item,
+.md-nav__link,
+.md-nav__title,
 .md-header,
-.md-footer {
+.md-header-nav,
+.md-header__button,
+.md-footer,
+.md-tabs,
+.md-tabs__link,
+.md-search__input,
+.md-search__output,
+.md-top {
+  font-family: 'Vazirmatn', 'Tahoma', 'Arial', sans-serif;
+}
+
+/* Buttons and controls */
+.md-button,
+button,
+.md-top__inner {
+  font-family: 'Vazirmatn', 'Tahoma', 'Arial', sans-serif;
+}
+
+/* Source and repository links */
+.md-source,
+.md-source__repository,
+.md-source__icon {
   font-family: 'Vazirmatn', 'Tahoma', 'Arial', sans-serif;
 }
 
@@ -76,6 +105,15 @@
 [dir="rtl"] .md-typeset code {
   direction: ltr;
   text-align: left;
+}
+
+/* Keep monospace font for code blocks */
+.md-typeset code,
+.md-typeset pre,
+.md-typeset kbd,
+.highlight code,
+.highlight pre {
+  font-family: 'Consolas', 'Monaco', 'Courier New', monospace !important;
 }
 
 /* Fix navigation arrows for RTL */
