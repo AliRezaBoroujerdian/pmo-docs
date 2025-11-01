@@ -1,4 +1,123 @@
-/* Version selector dropdown styles - v3 UPDATED */
+/* Version Banner - Simple and Clean */
+.version-banner {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    border-radius: 12px;
+    padding: 20px 30px;
+    margin: 30px 0;
+    box-shadow: 0 8px 20px rgba(102, 126, 234, 0.4);
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    border: 3px solid rgba(255, 255, 255, 0.3);
+}
+
+.version-info {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    color: white;
+}
+
+.version-label {
+    font-size: 16px;
+    font-weight: 600;
+    opacity: 0.95;
+}
+
+.version-number {
+    font-size: 36px;
+    font-weight: bold;
+    color: #ffd700;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+}
+
+.version-badge-new {
+    background: linear-gradient(135deg, #4CAF50 0%, #45a049 100%);
+    padding: 6px 16px;
+    border-radius: 25px;
+    font-size: 13px;
+    font-weight: bold;
+    box-shadow: 0 3px 8px rgba(0,0,0,0.2);
+}
+
+.version-select-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.version-select-wrapper label {
+    color: white;
+    font-weight: 700;
+    font-size: 15px;
+    white-space: nowrap;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+}
+
+.version-dropdown-new {
+    padding: 12px 20px;
+    border: 3px solid #ffd700;
+    border-radius: 10px;
+    font-size: 15px;
+    background-color: white;
+    cursor: pointer;
+    color: #333;
+    font-family: 'Vazirmatn', 'Tahoma', sans-serif;
+    min-width: 220px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+
+.version-dropdown-new:hover {
+    border-color: #ff6b6b;
+    background-color: #fffef7;
+    box-shadow: 0 6px 15px rgba(255, 107, 107, 0.5);
+    transform: translateY(-2px);
+}
+
+.version-dropdown-new:focus {
+    outline: none;
+    border-color: #ff6b6b;
+    box-shadow: 0 0 0 4px rgba(255, 107, 107, 0.3);
+}
+
+.version-dropdown-new option {
+    padding: 10px;
+    font-size: 14px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .version-banner {
+        flex-direction: column;
+        align-items: stretch;
+        padding: 20px;
+    }
+    
+    .version-info {
+        justify-content: center;
+    }
+    
+    .version-select-wrapper {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 8px;
+    }
+    
+    .version-dropdown-new {
+        width: 100%;
+    }
+}
+
+/* RTL Support */
+[dir="rtl"] .version-banner {
+    direction: rtl;
+}
+
+/* Old styles - keep for compatibility */
 .version-selector {
   position: sticky !important;
   top: 80px !important;

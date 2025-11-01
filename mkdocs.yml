@@ -55,19 +55,23 @@ markdown_extensions:
 nav:
   - صفحه اصلی: index.md
   - مدیریت پروژه:
-      - انتخاب نسخه: project-management/index.md
-      - نسخه 1.0: project-management/versions/v1.0/guide.md
-      - نسخه 2.0: project-management/versions/v2.0/guide.md
+      - نسخه 1.0.0:
+          - راهنما: project-management/versions/v1.0.0/guide.md
+      - نسخه 2.0.0-beta:
+          - راهنما: project-management/versions/v2.0.0-beta/guide.md
   - مدیریت ریسک:
-      - انتخاب نسخه: risk-management/index.md
-      - نسخه 1.0: risk-management/versions/v1.0/overview.md
-      - نسخه 2.0: risk-management/versions/v2.0/overview.md
-      - نسخه 3.0:
-          - مرور کلی: risk-management/versions/v3.0/overview.md
-          - شناسایی: risk-management/versions/v3.0/identification.md
-          - ارزیابی: risk-management/versions/v3.0/assessment.md
-          - پاسخ: risk-management/versions/v3.0/response.md
-          - پایش: risk-management/versions/v3.0/monitoring.md
+      - نسخه 1.0.0:
+          - مرور کلی: risk-management/versions/v1.0.0/overview.md
+      - نسخه 2.0.0-beta:
+          - مرور کلی: risk-management/versions/v2.0.0-beta/overview.md
+      - نسخه 3.0.0:
+          - مرور کلی: risk-management/versions/v3.0.0/overview.md
+          - شناسایی: risk-management/versions/v3.0.0/identification.md
+          - ارزیابی: risk-management/versions/v3.0.0/assessment.md
+          - پاسخ: risk-management/versions/v3.0.0/response.md
+          - کاهش: risk-management/versions/v3.0.0/mitigation.md
+          - پایش: risk-management/versions/v3.0.0/monitoring.md
+          - گزارش‌دهی: risk-management/versions/v3.0.0/reporting.md
 
 # Extra CSS for better RTL support
 extra_css:
