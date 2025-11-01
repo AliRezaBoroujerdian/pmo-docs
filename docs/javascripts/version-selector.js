@@ -1,0 +1,218 @@
+// Smart Version Selector - Shows only current version pages
+console.log('===== FILE LOADED - TOP LEVEL =====');
+
+(function() {
+    'use strict';
+    
+    console.log('===== VERSION SELECTOR LOADED =====');
+    console.log('[Version Selector] Starting...');
+    
+    function cleanupOldSelectors() {
+        var old = document.querySelectorAll('.version-selector-custom');
+        console.log('[Version Selector] Cleanup found:', old.length, 'old selectors');
+        for (var i = 0; i < old.length; i++) {
+            old[i].remove();
+        }
+    }
+    
+    function init() {
+        console.log('[Version Selector] Init called');
+        
+        // Check if already exists
+        if (document.querySelector('.version-selector-custom')) {
+            console.log('[Version Selector] Already exists, skipping');
+            return;
+        }
+        
+        cleanupOldSelectors();
+        
+        var path = window.location.pathname;
+        console.log('[Version Selector] Path:', path);
+        
+        var currentDoc = null;
+        var currentVersion = null;
+        
+        if (path.indexOf('/risk-management/') > -1) {
+            currentDoc = 'risk-management';
+        } else if (path.indexOf('/project-management/') > -1) {
+            currentDoc = 'project-management';
+        }
+        
+        var versionMatch = path.match(/\/v(\d+\.\d+\.\d+(?:-\w+)?)\//);
+        if (versionMatch) {
+            currentVersion = 'v' + versionMatch[1];
+        }
+        
+        console.log('[Version Selector] Doc:', currentDoc, 'Version:', currentVersion);
+        
+        if (!currentDoc || !currentVersion) {
+            console.log('[Version Selector] Not in versioned page');
+            return;
+        }
+        
+        var nav = document.querySelector('.md-sidebar--primary .md-nav--primary');
+        if (!nav) {
+            console.log('[Version Selector] Nav not found');
+            return;
+        }
+        
+        var navList = nav.querySelector('.md-nav__list');
+        if (!navList) return;
+        
+        var mainItems = navList.querySelectorAll(':scope > .md-nav__item');
+        var docSection = null;
+        
+        for (var i = 0; i < mainItems.length; i++) {
+            var link = mainItems[i].querySelector(':scope > .md-nav__link');
+            if (link) {
+                var text = link.textContent;
+                if ((currentDoc === 'risk-management' && text.indexOf('ریسک') > -1) ||
+                    (currentDoc === 'project-management' && text.indexOf('پروژه') > -1)) {
+                    docSection = mainItems[i];
+                    break;
+                }
+            }
+        }
+        
+        if (!docSection) {
+            console.log('[Version Selector] Doc section not found');
+            return;
+        }
+        
+        var subNav = docSection.querySelector(':scope > .md-nav');
+        if (!subNav) return;
+        
+        var subList = subNav.querySelector(':scope > .md-nav__list');
+        if (!subList) return;
+        
+        var versionItems = subList.querySelectorAll(':scope > .md-nav__item');
+        var versions = [];
+        
+        for (var i = 0; i < versionItems.length; i++) {
+            var item = versionItems[i];
+            var vLink = item.querySelector(':scope > .md-nav__link');
+            if (vLink) {
+                var vText = vLink.textContent.trim();
+                var vm = vText.match(/(\d+\.\d+\.\d+(?:-\w+)?)/);
+                if (vm) {
+                    versions.push({
+                        element: item,
+                        version: 'v' + vm[1],
+                        text: vText,
+                        link: vLink.getAttribute('href')
+                    });
+                }
+            }
+        }
+        
+        console.log('[Version Selector] Found versions:', versions.length);
+        
+        if (versions.length === 0) return;
+        
+        for (var i = 0; i < versions.length; i++) {
+            if (versions[i].version !== currentVersion) {
+                versions[i].element.style.display = 'none';
+            } else {
+                versions[i].element.style.display = '';
+            }
+        }
+        
+        var wrapper = document.createElement('div');
+        wrapper.className = 'md-nav__item md-nav__item--section version-selector-custom';
+        
+        var label = document.createElement('label');
+        label.className = 'md-nav__link';
+        label.textContent = 'نسخه';
+        label.style.cssText = 'cursor: default; font-weight: 700;';
+        
+        var selectWrapper = document.createElement('div');
+        selectWrapper.style.cssText = 'padding: 0 12px 8px 12px;';
+        
+        var select = document.createElement('select');
+        select.className = 'md-select';
+        select.style.cssText = 'width: 100%; padding: 6px 8px; font-size: 0.8rem; border: 1px solid var(--md-default-fg-color--lightest); border-radius: 2px; background: var(--md-default-bg-color); color: var(--md-default-fg-color); font-family: inherit;';
+        
+        for (var i = 0; i < versions.length; i++) {
+            var opt = document.createElement('option');
+            opt.value = versions[i].version;
+            opt.textContent = versions[i].text;
+            if (versions[i].version === currentVersion) {
+                opt.selected = true;
+            }
+            select.appendChild(opt);
+        }
+        
+        select.addEventListener('change', function() {
+            var selectedVersion = this.value;
+            console.log('[Version Selector] Changing to:', selectedVersion);
+            
+            for (var i = 0; i < versions.length; i++) {
+                if (versions[i].version === selectedVersion) {
+                    var targetLink = versions[i].element.querySelector('.md-nav__link[href]');
+                    if (targetLink) {
+                        window.location.href = targetLink.getAttribute('href');
+                    }
+                    break;
+                }
+            }
+        });
+        
+        select.addEventListener('mouseover', function() {
+            this.style.borderColor = 'var(--md-default-fg-color--light)';
+        });
+        
+        select.addEventListener('mouseout', function() {
+            this.style.borderColor = 'var(--md-default-fg-color--lightest)';
+        });
+        
+        select.addEventListener('focus', function() {
+            this.style.outline = '2px solid var(--md-primary-fg-color)';
+            this.style.outlineOffset = '2px';
+        });
+        
+        select.addEventListener('blur', function() {
+            this.style.outline = 'none';
+        });
+        
+        wrapper.appendChild(label);
+        selectWrapper.appendChild(select);
+        wrapper.appendChild(selectWrapper);
+        
+        var firstVersion = versions[0].element;
+        firstVersion.parentNode.insertBefore(wrapper, firstVersion);
+        
+        console.log('[Version Selector] Created successfully!');
+    }
+    
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', init);
+    } else {
+        init();
+    }
+    
+    if (typeof document$ !== 'undefined') {
+        document$.subscribe(function() {
+            setTimeout(init, 150);
+        });
+    }
+    
+    // Fallback check only if needed
+    var checkCount = 0;
+    var checkInterval = setInterval(function() {
+        checkCount++;
+        if (checkCount > 10) {
+            clearInterval(checkInterval);
+            return;
+        }
+        
+        if (!document.querySelector('.version-selector-custom')) {
+            var path = window.location.pathname;
+            if (path.indexOf('/v') > -1 && (path.indexOf('/risk-management/') > -1 || path.indexOf('/project-management/') > -1)) {
+                init();
+            }
+        } else {
+            clearInterval(checkInterval);
+        }
+    }, 1000);
+    
+})();
