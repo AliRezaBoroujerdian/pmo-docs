@@ -1,6 +1,15 @@
 ﻿# مستندات مدیریت پروژه
 
+<script>
+// Auto-redirect to latest version
+window.location.href = 'versions/v2.0.0-beta/guide/';
+</script>
+
 این بخش شامل تمامی مستندات مربوط به مدیریت پروژه است.
+
+**⚠️ توجه:** در حال انتقال خودکار به آخرین نسخه (v2.0.0-beta)...
+
+اگر انتقال خودکار انجام نشد، [اینجا کلیک کنید](versions/v2.0.0-beta/guide/).
 
 ## نسخه‌های موجود
 

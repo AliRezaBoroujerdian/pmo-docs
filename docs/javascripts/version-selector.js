@@ -7,6 +7,58 @@ console.log('===== FILE LOADED - TOP LEVEL =====');
     console.log('===== VERSION SELECTOR LOADED =====');
     console.log('[Version Selector] Starting...');
     
+    // Redirect to latest version if on document index page
+    function redirectToLatestVersion() {
+        var path = window.location.pathname;
+        console.log('[Redirect] Checking path:', path);
+        
+        // Check if we're on a document index page (not in a version)
+        var isDocIndex = false;
+        var docType = null;
+        
+        // Match patterns like /risk-management/ or /project-management/ (without version)
+        if (path.match(/\/risk-management\/?$/) || path.match(/\/risk-management\/index\.html$/)) {
+            isDocIndex = true;
+            docType = 'risk-management';
+        } else if (path.match(/\/project-management\/?$/) || path.match(/\/project-management\/index\.html$/)) {
+            isDocIndex = true;
+            docType = 'project-management';
+        }
+        
+        if (!isDocIndex) {
+            console.log('[Redirect] Not on document index page');
+            return;
+        }
+        
+        console.log('[Redirect] On document index:', docType);
+        
+        // Define latest versions for each document
+        var latestVersions = {
+            'risk-management': 'v3.0.0',
+            'project-management': 'v2.0.0-beta'
+        };
+        
+        var latestVersion = latestVersions[docType];
+        if (!latestVersion) {
+            console.log('[Redirect] No latest version defined for:', docType);
+            return;
+        }
+        
+        // Build redirect URL to the overview/guide page of latest version
+        var redirectPath;
+        if (docType === 'risk-management') {
+            redirectPath = '/' + docType + '/versions/' + latestVersion + '/overview/';
+        } else if (docType === 'project-management') {
+            redirectPath = '/' + docType + '/versions/' + latestVersion + '/guide/';
+        }
+        
+        console.log('[Redirect] Redirecting to:', redirectPath);
+        window.location.href = redirectPath;
+    }
+    
+    // Run redirect check first
+    redirectToLatestVersion();
+    
     function cleanupOldSelectors() {
         var old = document.querySelectorAll('.version-selector-custom');
         console.log('[Version Selector] Cleanup found:', old.length, 'old selectors');
@@ -108,6 +160,39 @@ console.log('===== FILE LOADED - TOP LEVEL =====');
         console.log('[Version Selector] Found versions:', versions.length);
         
         if (versions.length === 0) return;
+        
+        // Sort versions - newest first (descending)
+        versions.sort(function(a, b) {
+            // Extract version numbers
+            var aMatch = a.version.match(/v(\d+)\.(\d+)\.(\d+)(?:-(\w+))?/);
+            var bMatch = b.version.match(/v(\d+)\.(\d+)\.(\d+)(?:-(\w+))?/);
+            
+            if (!aMatch || !bMatch) return 0;
+            
+            var aMajor = parseInt(aMatch[1]);
+            var aMinor = parseInt(aMatch[2]);
+            var aPatch = parseInt(aMatch[3]);
+            var aPrerelease = aMatch[4] || '';
+            
+            var bMajor = parseInt(bMatch[1]);
+            var bMinor = parseInt(bMatch[2]);
+            var bPatch = parseInt(bMatch[3]);
+            var bPrerelease = bMatch[4] || '';
+            
+            // Compare major.minor.patch
+            if (aMajor !== bMajor) return bMajor - aMajor; // Descending
+            if (aMinor !== bMinor) return bMinor - aMinor;
+            if (aPatch !== bPatch) return bPatch - aPatch;
+            
+            // Stable versions come before pre-release
+            if (!aPrerelease && bPrerelease) return -1;
+            if (aPrerelease && !bPrerelease) return 1;
+            
+            // Both pre-release or both stable
+            return 0;
+        });
+        
+        console.log('[Version Selector] Sorted versions:', versions.map(function(v) { return v.version; }));
         
         for (var i = 0; i < versions.length; i++) {
             if (versions[i].version !== currentVersion) {
