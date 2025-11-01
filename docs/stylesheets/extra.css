@@ -36,3 +36,30 @@
   direction: ltr;
   text-align: left;
 }
+
+/* Fix navigation arrows for RTL */
+[dir="rtl"] .md-nav__item--nested > .md-nav__link::after {
+  transform: scaleX(-1);
+}
+
+/* Fix table alignment */
+[dir="rtl"] .md-typeset table:not([class]) {
+  direction: rtl;
+}
+
+[dir="rtl"] .md-typeset table:not([class]) td,
+[dir="rtl"] .md-typeset table:not([class]) th {
+  text-align: right;
+}
+
+/* Fix search box */
+[dir="rtl"] .md-search__input {
+  text-align: right;
+}
+
+/* Better spacing for Persian text */
+.md-typeset p,
+.md-typeset li {
+  text-align: justify;
+  text-justify: inter-word;
+}

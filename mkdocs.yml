@@ -57,6 +57,10 @@ markdown_extensions:
 # Navigation
 nav:
   - صفحه اصلی: index.md
+  - مدیریت پروژه:
+      - راهنمای جامع: project-management/guide.md
+  - مدیریت ریسک:
+      - مرور کلی: risk-management/overview.md
 
 # Extra CSS for better RTL support
 extra_css:
