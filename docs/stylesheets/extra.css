@@ -1,3 +1,28 @@
+/* Vazirmatn Font Face Definitions */
+@font-face {
+  font-family: 'Vazirmatn';
+  src: url('./Vazirmatn-Regular.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Vazirmatn';
+  src: url('./Vazirmatn-Medium.woff2') format('woff2');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Vazirmatn';
+  src: url('./Vazirmatn-Bold.woff2') format('woff2');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
 /* RTL Support for Material MkDocs */
 [dir="rtl"] .md-content {
   text-align: right;
@@ -26,8 +51,24 @@
 
 /* Better font support for Persian */
 .md-typeset {
-  font-family: 'Roboto', 'Tahoma', 'Arial', sans-serif;
+  font-family: 'Vazirmatn', 'Tahoma', 'Arial', sans-serif;
   line-height: 1.8;
+}
+
+.md-typeset h1,
+.md-typeset h2,
+.md-typeset h3,
+.md-typeset h4,
+.md-typeset h5,
+.md-typeset h6 {
+  font-family: 'Vazirmatn', 'Tahoma', 'Arial', sans-serif;
+  font-weight: 700;
+}
+
+.md-nav,
+.md-header,
+.md-footer {
+  font-family: 'Vazirmatn', 'Tahoma', 'Arial', sans-serif;
 }
 
 /* Code blocks RTL fix */

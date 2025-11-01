@@ -34,9 +34,6 @@ theme:
       toggle:
         icon: material/brightness-4
         name: تغییر به حالت روشن
-  font:
-    text: Roboto
-    code: Roboto Mono
 
 # Plugins
 plugins:
