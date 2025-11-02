@@ -217,13 +217,17 @@ console.log('===== FILE LOADED - TOP LEVEL =====');
         select.className = 'md-select';
         select.style.cssText = 'width: 100%; padding: 6px 8px; font-size: 0.8rem; border: 1px solid var(--md-default-fg-color--lightest); border-radius: 2px; background: var(--md-default-bg-color); color: var(--md-default-fg-color); font-family: inherit;';
         
+        // Add options - versions array is already sorted (newest first)
         for (var i = 0; i < versions.length; i++) {
             var opt = document.createElement('option');
             opt.value = versions[i].version;
             opt.textContent = versions[i].text;
-            if (versions[i].version === currentVersion) {
+            
+            // Select the first option (which is the latest version after sorting)
+            if (i === 0) {
                 opt.selected = true;
             }
+            
             select.appendChild(opt);
         }
         
