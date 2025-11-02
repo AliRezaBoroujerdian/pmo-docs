@@ -263,10 +263,19 @@ console.log('===== FILE LOADED - TOP LEVEL =====');
         selectWrapper.appendChild(select);
         wrapper.appendChild(selectWrapper);
         
+        // Insert at the beginning of the version list (before first version)
         var firstVersion = versions[0].element;
-        firstVersion.parentNode.insertBefore(wrapper, firstVersion);
+        var parentList = firstVersion.parentNode;
         
-        console.log('[Version Selector] Created successfully!');
+        // Find the first child element (should be first version item)
+        var firstChild = parentList.firstElementChild;
+        if (firstChild) {
+            parentList.insertBefore(wrapper, firstChild);
+        } else {
+            parentList.appendChild(wrapper);
+        }
+        
+        console.log('[Version Selector] Created successfully at top of list!');
     }
     
     if (document.readyState === 'loading') {
