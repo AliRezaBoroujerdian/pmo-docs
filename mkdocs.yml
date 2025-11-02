@@ -72,6 +72,17 @@ nav:
           - کاهش: risk-management/versions/v3.0.0/mitigation.md
           - پایش: risk-management/versions/v3.0.0/monitoring.md
           - گزارش‌دهی: risk-management/versions/v3.0.0/reporting.md
+  - چک‌لیست معماری:
+      - معرفی: architecture/index.md
+      - برتری عملیاتی: architecture/operational-excellence.md
+      - امنیت: architecture/security.md
+      - قابلیت اطمینان: architecture/reliability.md
+      - بهره‌وری عملکرد: architecture/performance-efficiency.md
+      - بهینه‌سازی هزینه: architecture/cost-optimization.md
+      - پایداری: architecture/sustainability.md
+      - راهبرد سنجش: architecture/testing-strategy.md
+      - مدیریت داده: architecture/data-management.md
+      - کیفیت کد: architecture/code-quality.md
 
 # Extra CSS for better RTL support
 extra_css:
