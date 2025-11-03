@@ -73,16 +73,30 @@ nav:
           - پایش: risk-management/versions/v3.0.0/monitoring.md
           - گزارش‌دهی: risk-management/versions/v3.0.0/reporting.md
   - چک‌لیست معماری:
-      - معرفی: architecture/index.md
-      - برتری عملیاتی: architecture/operational-excellence.md
-      - امنیت: architecture/security.md
-      - قابلیت اطمینان: architecture/reliability.md
-      - بهره‌وری عملکرد: architecture/performance-efficiency.md
-      - بهینه‌سازی هزینه: architecture/cost-optimization.md
-      - پایداری: architecture/sustainability.md
-      - راهبرد سنجش: architecture/testing-strategy.md
-      - مدیریت داده: architecture/data-management.md
-      - کیفیت کد: architecture/code-quality.md
+      - نسخه 0.6:
+          - معرفی: architecture/operational-excellence.md
+          - برتری عملیاتی: architecture/operational-excellence.md
+          - امنیت: architecture/security.md
+          - قابلیت اطمینان: architecture/reliability.md
+          - بهره‌وری عملکرد: architecture/performance-efficiency.md
+          - بهینه‌سازی هزینه: architecture/cost-optimization.md
+          - پایداری: architecture/sustainability.md
+          - راهبرد سنجش: architecture/testing-strategy.md
+          - مدیریت داده: architecture/data-management.md
+          - کیفیت کد: architecture/code-quality.md
+      - نسخه 6.0.0:
+          - معرفی: architecture/versions/v6.0.0/index.md
+          - برتری عملیاتی: architecture/versions/v6.0.0/operational-excellence.md
+          - امنیت: architecture/versions/v6.0.0/security.md
+          - قابلیت اطمینان: architecture/versions/v6.0.0/reliability.md
+          - بهره‌وری عملکرد: architecture/versions/v6.0.0/performance-efficiency.md
+          - بهینه‌سازی هزینه: architecture/versions/v6.0.0/cost-optimization.md
+          - پایداری: architecture/versions/v6.0.0/sustainability.md
+          - راهبرد سنجش: architecture/versions/v6.0.0/testing-strategy.md
+          - مدیریت داده: architecture/versions/v6.0.0/data-management.md
+  - کنترل کیفیت کد:
+      - نسخه 1.0.0:
+          - مرور کلی: code-quality-control/versions/v1.0.0/overview.md
 
 # Extra CSS for better RTL support
 extra_css:

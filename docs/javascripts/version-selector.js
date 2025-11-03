@@ -23,6 +23,12 @@ console.log('===== FILE LOADED - TOP LEVEL =====');
         } else if (path.match(/\/project-management\/?$/) || path.match(/\/project-management\/index\.html$/)) {
             isDocIndex = true;
             docType = 'project-management';
+        } else if (path.match(/\/architecture\/?$/) || path.match(/\/architecture\/index\.html$/)) {
+            isDocIndex = true;
+            docType = 'architecture';
+        } else if (path.match(/\/code-quality-control\/?$/) || path.match(/\/code-quality-control\/index\.html$/)) {
+            isDocIndex = true;
+            docType = 'code-quality-control';
         }
         
         if (!isDocIndex) {
@@ -35,7 +41,9 @@ console.log('===== FILE LOADED - TOP LEVEL =====');
         // Define latest versions for each document
         var latestVersions = {
             'risk-management': 'v3.0.0',
-            'project-management': 'v2.0.0-beta'
+            'project-management': 'v2.0.0-beta',
+            'architecture': 'v6.0.0',
+            'code-quality-control': 'v1.0.0'
         };
         
         var latestVersion = latestVersions[docType];
@@ -50,6 +58,10 @@ console.log('===== FILE LOADED - TOP LEVEL =====');
             redirectPath = '/' + docType + '/versions/' + latestVersion + '/overview/';
         } else if (docType === 'project-management') {
             redirectPath = '/' + docType + '/versions/' + latestVersion + '/guide/';
+        } else if (docType === 'architecture') {
+            redirectPath = '/' + docType + '/versions/' + latestVersion + '/';
+        } else if (docType === 'code-quality-control') {
+            redirectPath = '/' + docType + '/versions/' + latestVersion + '/overview/';
         }
         
         console.log('[Redirect] Redirecting to:', redirectPath);
@@ -88,6 +100,10 @@ console.log('===== FILE LOADED - TOP LEVEL =====');
             currentDoc = 'risk-management';
         } else if (path.indexOf('/project-management/') > -1) {
             currentDoc = 'project-management';
+        } else if (path.indexOf('/architecture/') > -1) {
+            currentDoc = 'architecture';
+        } else if (path.indexOf('/code-quality-control/') > -1) {
+            currentDoc = 'code-quality-control';
         }
         
         var versionMatch = path.match(/\/v(\d+\.\d+\.\d+(?:-\w+)?)\//);
@@ -119,7 +135,9 @@ console.log('===== FILE LOADED - TOP LEVEL =====');
             if (link) {
                 var text = link.textContent;
                 if ((currentDoc === 'risk-management' && text.indexOf('ریسک') > -1) ||
-                    (currentDoc === 'project-management' && text.indexOf('پروژه') > -1)) {
+                    (currentDoc === 'project-management' && text.indexOf('پروژه') > -1) ||
+                    (currentDoc === 'architecture' && text.indexOf('معماری') > -1) ||
+                    (currentDoc === 'code-quality-control' && text.indexOf('کیفیت کد') > -1)) {
                     docSection = mainItems[i];
                     break;
                 }
@@ -223,8 +241,8 @@ console.log('===== FILE LOADED - TOP LEVEL =====');
             opt.value = versions[i].version;
             opt.textContent = versions[i].text;
             
-            // Select the first option (which is the latest version after sorting)
-            if (i === 0) {
+            // Select the current version that matches the URL
+            if (versions[i].version === currentVersion) {
                 opt.selected = true;
             }
             
@@ -305,7 +323,12 @@ console.log('===== FILE LOADED - TOP LEVEL =====');
         
         if (!document.querySelector('.version-selector-custom')) {
             var path = window.location.pathname;
-            if (path.indexOf('/v') > -1 && (path.indexOf('/risk-management/') > -1 || path.indexOf('/project-management/') > -1)) {
+            if (path.indexOf('/v') > -1 && (
+                path.indexOf('/risk-management/') > -1 || 
+                path.indexOf('/project-management/') > -1 ||
+                path.indexOf('/architecture/') > -1 ||
+                path.indexOf('/code-quality-control/') > -1
+            )) {
                 init();
             }
         } else {
