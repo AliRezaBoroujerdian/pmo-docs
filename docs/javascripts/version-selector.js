@@ -29,6 +29,9 @@ console.log('===== FILE LOADED - TOP LEVEL =====');
         } else if (path.match(/\/code-quality-control\/?$/) || path.match(/\/code-quality-control\/index\.html$/)) {
             isDocIndex = true;
             docType = 'code-quality-control';
+        } else if (path.match(/\/version-control\/?$/) || path.match(/\/version-control\/index\.html$/)) {
+            isDocIndex = true;
+            docType = 'version-control';
         }
         
         if (!isDocIndex) {
@@ -43,7 +46,8 @@ console.log('===== FILE LOADED - TOP LEVEL =====');
             'risk-management': 'v3.0.0',
             'project-management': 'v2.0.0-beta',
             'architecture': 'v6.0.0',
-            'code-quality-control': 'v1.0.0'
+            'code-quality-control': 'v1.0.0',
+            'version-control': 'v1.0.0'
         };
         
         var latestVersion = latestVersions[docType];
@@ -61,6 +65,8 @@ console.log('===== FILE LOADED - TOP LEVEL =====');
         } else if (docType === 'architecture') {
             redirectPath = '/' + docType + '/versions/' + latestVersion + '/';
         } else if (docType === 'code-quality-control') {
+            redirectPath = '/' + docType + '/versions/' + latestVersion + '/overview/';
+        } else if (docType === 'version-control') {
             redirectPath = '/' + docType + '/versions/' + latestVersion + '/overview/';
         }
         
@@ -104,6 +110,8 @@ console.log('===== FILE LOADED - TOP LEVEL =====');
             currentDoc = 'architecture';
         } else if (path.indexOf('/code-quality-control/') > -1) {
             currentDoc = 'code-quality-control';
+        } else if (path.indexOf('/version-control/') > -1) {
+            currentDoc = 'version-control';
         }
         
         var versionMatch = path.match(/\/v(\d+\.\d+\.\d+(?:-\w+)?)\//);
@@ -137,7 +145,8 @@ console.log('===== FILE LOADED - TOP LEVEL =====');
                 if ((currentDoc === 'risk-management' && text.indexOf('ریسک') > -1) ||
                     (currentDoc === 'project-management' && text.indexOf('پروژه') > -1) ||
                     (currentDoc === 'architecture' && text.indexOf('معماری') > -1) ||
-                    (currentDoc === 'code-quality-control' && text.indexOf('کیفیت کد') > -1)) {
+                    (currentDoc === 'code-quality-control' && text.indexOf('کیفیت کد') > -1) ||
+                    (currentDoc === 'version-control' && text.indexOf('Version Control') > -1)) {
                     docSection = mainItems[i];
                     break;
                 }
@@ -327,7 +336,8 @@ console.log('===== FILE LOADED - TOP LEVEL =====');
                 path.indexOf('/risk-management/') > -1 || 
                 path.indexOf('/project-management/') > -1 ||
                 path.indexOf('/architecture/') > -1 ||
-                path.indexOf('/code-quality-control/') > -1
+                path.indexOf('/code-quality-control/') > -1 ||
+                path.indexOf('/version-control/') > -1
             )) {
                 init();
             }

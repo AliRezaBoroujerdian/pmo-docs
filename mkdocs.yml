@@ -97,6 +97,10 @@ nav:
   - کنترل کیفیت کد:
       - نسخه 1.0.0:
           - مرور کلی: code-quality-control/versions/v1.0.0/overview.md
+  - قوانین Version Control:
+      - نسخه 1.0.0:
+          - معرفی: version-control/versions/v1.0.0/overview.md
+          - راهنمای Pull Request: version-control/versions/v1.0.0/pull-request-guide.md
 
 # Extra CSS for better RTL support
 extra_css:
